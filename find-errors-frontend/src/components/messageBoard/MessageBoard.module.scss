@@ -1,0 +1,18 @@
+.messageBoardStyle {
+  display: grid;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  margin-top: 5%;
+  border-radius: 8px;
+  padding: 32px;
+  max-width: 600px;
+
+  h4 {
+    margin-left: 16px;
+  }
+
+  p {
+    margin-left: 16px;
+  }
+}

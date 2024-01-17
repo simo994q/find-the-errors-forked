@@ -1,0 +1,39 @@
+.profileStyle {
+  display: grid;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  margin-top: 5%;
+  border-radius: 8px;
+  padding: 32px;
+  max-width: 600px;
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  p {
+    text-align: center;
+  }
+
+  span {
+    display: flex;
+    gap: 12px;
+    align-self: end;
+    justify-self: end;
+    text-align: center;
+    img {
+      width: 20x;
+      height: 20px;
+      margin-right: 1%;
+      cursor: pointer;
+    }
+  }
+  img:hover {
+    transform: scale(1.1);
+  }
+
+  form {
+    width: 50%;
+    margin: auto;
+  }
+}
