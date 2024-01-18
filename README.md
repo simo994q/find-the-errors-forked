@@ -66,8 +66,26 @@ Skulle ændres til det her:
 ### Når man henter beskeder vises en fejl
 Det her:
 
-``` let options = { Authorization: `Bearer ${user.accessToken}` }```
+```let options = { Authorization: `Bearer ${user.accessToken}` }```
 
 Skulle ændres til det her:
 
-```const options = { headers: { Authorization: `Bearer ${user.accessToken}` } }```
+```let options = { headers: { Authorization: `Bearer ${user.accessToken}` } }```
+
+
+### Siden refresher
+Der skulle en ```e.preventDefault()``` på ```submitMessage````funktionen:
+
+```
+e.preventDefault()
+let url = "http://localhost:8081/message/create";
+let body = new URLSearchParams();
+body.append("message", e.target.message.value);
+let options = {
+  method: "POST",
+  body: body,
+  headers: { Authorization: `Bearers ${user.accessToken}` },
+};
+
+// fetch...    
+```
