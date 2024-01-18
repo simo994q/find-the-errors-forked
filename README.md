@@ -1,4 +1,4 @@
-﻿# find-the-errors
+# find-the-errors
 
 I denne opgave skal du finde fem fejl i dette projekt. 
 Fejlene er beskrevet som issues i dette repository. 
@@ -34,3 +34,12 @@ DB=users
 
 Nu skulle projektet gerne køre med både frontend og backend løsningen. 
 Tid til at finde og fixe fejlene. Held og lykke. 
+
+
+## Løsninger:
+### "Sign in knappen virker ikke"
+Dette input felt:
+```<InputField type="button" name="Submit" />```
+
+Skulle ændres til det her:
+```<InputField type="submit" name="Submit" />```
