@@ -7,6 +7,7 @@ export const MessageBoard = ({ user }) => {
   const [error, setError] = useState(null);
 
   const submitMessage = (e) => {
+    e.preventDefault()
     let url = "http://localhost:8081/message/create";
     let body = new URLSearchParams();
     body.append("message", e.target.message.value);
@@ -23,8 +24,11 @@ export const MessageBoard = ({ user }) => {
   };
 
   const getMessages = () => {
-    let options = { Authorization: `Bearer ${user.accessToken}` };
-    fetch("http://localhost:8081/messages", options)
+    console.log(user.accessToken);
+    const newOptions = {
+      headers: { Authorization: `Bearer ${user.accessToken}` }
+    }
+    fetch("http://localhost:8081/messages", newOptions)
       .then((res) => res.json())
       .then((data) => (data.length > 0 ? setMessages(data) : setError(data)));
   };
@@ -46,8 +50,8 @@ export const MessageBoard = ({ user }) => {
       <section>
         <h4>Your messages:</h4>
         {error && <b>{error.message}</b>}
-        {messages?.map((msg) => {
-          return <p>{msg.message}</p>;
+        {messages?.map((msg, i) => {
+          return <p key={i}>{msg.message}</p>;
         })}
       </section>
     </div>

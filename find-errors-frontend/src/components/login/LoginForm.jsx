@@ -20,8 +20,7 @@ export const LoginForm = ({ setUserData }) => {
 
     fetch(url, { method: "POST", body: body })
       .then((response) => response.json())
-      .then((data) =>
-        !data.accessToken ? setFeedbackMsg(data) : setUserData(data)
+      .then((data) => {console.log(data), !data.accessToken ? setFeedbackMsg(data) : setUserData(data)}
       )
       .catch((err) => console.log(err));
   };
@@ -59,7 +58,10 @@ export const LoginForm = ({ setUserData }) => {
           placeholder="enter password"
           label={true}
         />
-        <InputField type="button" name="Submit" />
+        <InputField
+          type="submit"
+          name="Submit"
+        />
       </form>
     </div>
   );

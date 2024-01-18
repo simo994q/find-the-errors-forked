@@ -9,8 +9,8 @@ export const Profile = ({ user, logout }) => {
         <img src={exitIcon} alt="logout" onClick={logout} />
       </span>
       <h2>You are logged in</h2>
-      <p>User Name: {user?.username}</p>
-      <p>User Email: {user?.useremail}</p>
+      <p>User Name: {user.name}</p>
+      <p>User Email: {user.email}</p>
     </div>
   );
 };
