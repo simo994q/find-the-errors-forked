@@ -39,7 +39,9 @@ Tid til at finde og fixe fejlene. Held og lykke.
 ## Løsninger:
 ### "Sign in knappen virker ikke"
 Dette input felt:
+
 ```<InputField type="button" name="Submit" />```
 
 Skulle ændres til det her:
+
 ```<InputField type="submit" name="Submit" />```
