@@ -24,11 +24,8 @@ export const MessageBoard = ({ user }) => {
   };
 
   const getMessages = () => {
-    console.log(user.accessToken);
-    const newOptions = {
-      headers: { Authorization: `Bearer ${user.accessToken}` }
-    }
-    fetch("http://localhost:8081/messages", newOptions)
+    let options = { headers: { Authorization: `Bearer ${user.accessToken}` } }
+    fetch("http://localhost:8081/messages", options)
       .then((res) => res.json())
       .then((data) => (data.length > 0 ? setMessages(data) : setError(data)));
   };
