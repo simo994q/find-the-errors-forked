@@ -37,7 +37,7 @@ Tid til at finde og fixe fejlene. Held og lykke.
 
 
 ## Løsninger:
-### "Sign in knappen virker ikke"
+### Sign in knappen virker ikke
 Dette input felt:
 
 ```<InputField type="button" name="Submit" />```
@@ -61,3 +61,13 @@ Skulle ændres til det her:
 <p>User Name: {user.name}</p>
 <p>User Email: {user.email}</p>
 ```
+
+
+### Når man henter beskeder vises en fejl
+Det her:
+
+``` let options = { Authorization: `Bearer ${user.accessToken}` }```
+
+Skulle ændres til det her:
+
+```const options = { headers: { Authorization: `Bearer ${user.accessToken}` } }```
