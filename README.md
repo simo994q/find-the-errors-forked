@@ -45,3 +45,19 @@ Dette input felt:
 Skulle ændres til det her:
 
 ```<InputField type="submit" name="Submit" />```
+
+
+### Når man er logget ind kan man ikke se brugerens navn eller email
+Det her:
+
+```
+<p>User Name: {user.username}</p>
+<p>User Email: {user.useremail}</p>
+```
+
+Skulle ændres til det her:
+
+```
+<p>User Name: {user.name}</p>
+<p>User Email: {user.email}</p>
+```
