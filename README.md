@@ -1,4 +1,4 @@
-﻿# find-the-errors
+# find-the-errors
 
 I denne opgave skal du finde fem fejl i dette projekt. 
 Fejlene er beskrevet som issues i dette repository. 
@@ -34,3 +34,61 @@ DB=users
 
 Nu skulle projektet gerne køre med både frontend og backend løsningen. 
 Tid til at finde og fixe fejlene. Held og lykke. 
+
+
+# Løsninger:
+### Sign in knappen virker ikke
+Dette input felt:
+
+```<InputField type="button" name="Submit" />```
+
+Skulle ændres til det her:
+
+```<InputField type="submit" name="Submit" />```
+
+
+## Når man er logget ind kan man ikke se brugerens navn eller email
+Det her:
+
+```
+<p>User Name: {user.username}</p>
+<p>User Email: {user.useremail}</p>
+```
+
+Skulle ændres til det her:
+
+```
+<p>User Name: {user.name}</p>
+<p>User Email: {user.email}</p>
+```
+
+
+## Når man henter beskeder vises en fejl
+Det her:
+
+```let options = { Authorization: `Bearer ${user.accessToken}` }```
+
+Skulle ændres til det her:
+
+```let options = { headers: { Authorization: `Bearer ${user.accessToken}` } }```
+
+
+## Siden refresher
+Der skulle en ```e.preventDefault()``` på ```submitMessage``` funktionen:
+
+```
+e.preventDefault()
+let url = "http://localhost:8081/message/create";
+let body = new URLSearchParams();
+body.append("message", e.target.message.value);
+let options = {
+  method: "POST",
+  body: body,
+  headers: { Authorization: `Bearers ${user.accessToken}` },
+};
+
+// fetch...    
+```
+
+## Når man sender en besked får man en fejl
+???
