@@ -36,7 +36,7 @@ Nu skulle projektet gerne køre med både frontend og backend løsningen.
 Tid til at finde og fixe fejlene. Held og lykke. 
 
 
-## Løsninger:
+# Løsninger:
 ### Sign in knappen virker ikke
 Dette input felt:
 
@@ -47,7 +47,7 @@ Skulle ændres til det her:
 ```<InputField type="submit" name="Submit" />```
 
 
-### Når man er logget ind kan man ikke se brugerens navn eller email
+## Når man er logget ind kan man ikke se brugerens navn eller email
 Det her:
 
 ```
@@ -63,7 +63,7 @@ Skulle ændres til det her:
 ```
 
 
-### Når man henter beskeder vises en fejl
+## Når man henter beskeder vises en fejl
 Det her:
 
 ```let options = { Authorization: `Bearer ${user.accessToken}` }```
@@ -73,8 +73,8 @@ Skulle ændres til det her:
 ```let options = { headers: { Authorization: `Bearer ${user.accessToken}` } }```
 
 
-### Siden refresher
-Der skulle en ```e.preventDefault()``` på ```submitMessage````funktionen:
+## Siden refresher
+Der skulle en ```e.preventDefault()``` på ```submitMessage``` funktionen:
 
 ```
 e.preventDefault()
@@ -89,3 +89,6 @@ let options = {
 
 // fetch...    
 ```
+
+## Når man sender en besked får man en fejl
+???
